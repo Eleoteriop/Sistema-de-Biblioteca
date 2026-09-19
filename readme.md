@@ -32,27 +32,32 @@ O projeto também utiliza a **Open Library API** para buscar automaticamente ima
 ## 🏗️ Estrutura do projeto
 biblioteca/<br>
 │<br>
-├── app.py
-├── database.db
-├── requirements.txt
-│
-├── static/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── script.js
-│   └── images/
-│
-├── templates/
-│   ├── index.html
-│   ├── login.html
-│   ├── cadastro.html
-│   ├── livros.html
-│   ├── livro.html
-│   ├── emprestimos.html
-│   └── doacao.html
-│
-└── README.md
+├── __pycache__/<br>
+│<br>
+├── .vscode/<br>
+│<br>
+├── banco de dados <br>
+│&emsp;&emsp;&emsp;&emsp;└──biblioteca.db<br>
+│<br>
+├── static/<br>
+│ &emsp;&emsp;&emsp;  ├── css/<br>
+│ &emsp;&emsp;&emsp;  └── imagens/<br>
+│<br>
+├── templates/<br>
+│ &emsp;&emsp;&emsp;&emsp;  ├── cadastrar_livro.html<br>
+│ &emsp;&emsp;&emsp;&emsp; ├── cadastro.html<br>
+│ &emsp;&emsp;&emsp;&emsp; ├── esqueci_senha.html<br>
+│ &emsp;&emsp;&emsp;&emsp; ├── home.html<br>
+│ &emsp;&emsp;&emsp;&emsp; ├── livros.html<br>
+│ &emsp;&emsp;&emsp;&emsp; ├── login.html<br>
+│ &emsp;&emsp;&emsp;&emsp;  ├── meus_emprestimos.html<br>
+│ &emsp;&emsp;&emsp;&emsp; └── Nova_senha.html<br>
+│<br>
+├── venv/<br>
+│<br>
+├── .gitignore<br>
+├── app.py<br>
+└── livros.py<br>
 
 A estrutura acima é apenas um exemplo e pode ser adaptada de acordo com a organização atual do projeto.
 
