@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/livros.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Cabeçalho Padrão Fixo -->
+    <header class="header">
+        <section class="cabecalho">
+            <a href="/" class="logo">
+                <img src="../static/imagens/logopreview.png" alt="Logo">
+            </a>
+
+            <nav class="navbiblio">
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/livros" style="color: #0af8ec;">Livros</a>
+                    <a href="/#sobre">Sobre</a>
+                </div>
+
+                <div class="nav-login">
+                    {% if email %}
+                    <div class="user-greeting">
+                        <span>Olá, {{ email }}</span>
+                        <a href="{{ url_for('logout') }}" class="btn-sair">Sair</a>
+                    </div>
+                    {% else %}
+                    <a href="/login" class="btn-entrar">Entrar</a>
+                    {% endif %}
+
+                    <div class="lupa">
+                        <a href="/livros">
+                            <img src="https://img.icons8.com/ios/30/ffffff/search--v1.png" alt="Pesquisar livros" />
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </section>
+    </header>
+
+    <!-- Conteúdo Principal da Página de Livros -->
+    <main class="main-livros">
+        <div class="livros-disponiveis">
+            <h1>Livros disponíveis</h1>
+        </div>
+
+        <div class="meus-emprestimos">
+            <a href="/meus_emprestimos">Meus empréstimos</a>
+        </div>
+
+        <div class="lista-livros">
+            {% for livro in livros %}
+            <div class="livro">
+                {% if livro['capa_url'] %}
+                <img src="{{ livro['capa_url'] }}" alt="Capa de {{ livro['titulo'] }}">
+                {% else %}
+                <div class="sem-capa">Sem capa disponível</div>
+                {% endif %}
+
+                <h2>{{ livro["titulo"] }}</h2>
+
+                <div class="livro-info">
+                    <p><span>Autor:</span> {{ livro["autor"] }}</p>
+                    <p><span>Ano:</span> {{ livro["ano"] }}</p>
+                    <p><span>ISBN:</span> {{ livro["isbn"] }}</p>
+                    <p><span>Categoria:</span> {{ livro["categoria"] }}</p>
+                    <p><span>Quantidade:</span> {{ livro["qtd"] }}</p>
+                </div>
+
+                <form action="/emprestimo" method="post" class="form-emprestimo">
+                    <input type="hidden" name="livro_id" value="{{ livro['id'] }}">
+                    <button type="submit">Solicitar empréstimo</button>
+                </form>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+
+</body>
+
+</html>

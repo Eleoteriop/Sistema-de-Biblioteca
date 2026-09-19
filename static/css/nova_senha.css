@@ -1,0 +1,137 @@
+/* Container central da página de nova senha */
+.main-nova {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 120px 20px 40px 20px; /* Compensa a altura do header fixo */
+}
+
+/* Card maior, mais espaçado e imponente */
+.card-nova-senha {
+    width: 100%;
+    max-width: 580px; /* Mesma largura robusta do card anterior */
+    background: rgba(0, 0, 0, 0.45); /* Fundo translúcido refinado */
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    padding: 50px 45px; /* Espaçamento interno generoso */
+    border-radius: 16px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(8px);
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/* Título maior e destacado */
+.card-nova-senha h1 {
+    font-size: 34px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 18px;
+    color: #ffffff;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Descrição com letras maiores */
+.descricao-nova {
+    font-size: 17px;
+    line-height: 1.6;
+    text-align: center;
+    color: #dedede;
+    margin-bottom: 35px;
+}
+
+/* Organização do formulário */
+.form-nova {
+    display: flex;
+    flex-direction: column;
+    gap: 22px; /* Espaço confortável entre os campos */
+}
+
+/* Grupo de inputs ampliado */
+.grupo-input {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.grupo-input label {
+    font-size: 16px; /* Rótulo com letras maiores */
+    font-weight: 600;
+    color: #f1f1f1;
+}
+
+.grupo-input input {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1.5px solid rgba(255, 255, 255, 0.25);
+    padding: 16px 20px; /* Inputs mais altos e confortáveis */
+    border-radius: 10px;
+    color: #fff;
+    font-size: 17px; /* Letra maior ao digitar */
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.grupo-input input::placeholder {
+    color: rgba(255, 255, 255, 0.45);
+}
+
+.grupo-input input:focus {
+    border-color: #0af8ec;
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 0 12px rgba(10, 248, 236, 0.4);
+}
+
+/* Botão de envio maior e marcante */
+.btn-alterar {
+    margin-top: 10px;
+    background: #0af8ec;
+    color: #11222b;
+    border: none;
+    padding: 18px;
+    font-size: 18px; /* Texto grande e chamativo no botão */
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(10, 248, 236, 0.35);
+}
+
+.btn-alterar:hover {
+    background: #00dfd3;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(10, 248, 236, 0.6);
+}
+
+/* Estilo para mensagens de feedback/flash */
+.flash-container-nova {
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 580px;
+    z-index: 100;
+}
+
+.flash-msg {
+    background: rgba(255, 77, 77, 0.85);
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 500;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    margin-bottom: 10px;
+}
+
+/* Animação suave de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

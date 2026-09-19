@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova senha</title>
+</head>
+Para a página de Nova Senha, vamos seguir exatamente a mesma lógica: usar um arquivo CSS exclusivo (nova_senha.css) para
+estilizar um card encorpado, largo, com fontes maiores e bastante espaçamento, mantendo o style.css apenas para o
+cabeçalho, fontes globais e o fundo da página.
+
+Aqui estão os códigos atualizados para você aplicar:
+
+1. HTML da Página "Nova Senha" (nova_senha.html)
+Substitua o conteúdo da sua página por este:
+
+HTML
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova senha</title>
+    <!-- CSS Principal (Cabeçalho, fontes e fundo) -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- CSS Específico desta página -->
+    <link rel="stylesheet" href="/static/css/nova_senha.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Mensagens Flash -->
+    {% with mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+    <div class="flash-container-nova">
+        {% for mensagem in mensagens %}
+        <p class="flash-msg">{{ mensagem }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <!-- Cabeçalho Padrão -->
+    <header class="header">
+        <section class="cabecalho">
+            <a href="/" class="logo">
+                <img src="../static/imagens/logopreview.png" alt="Logo">
+            </a>
+
+            <nav class="navbiblio">
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/livros">Livros</a>
+                    <a href="/#sobre">Sobre</a>
+                </div>
+
+                <div class="nav-login">
+                    <a href="/login" class="btn-entrar">Entrar</a>
+                    <div class="lupa">
+                        <a href="/livros">
+                            <img src="https://img.icons8.com/ios/30/ffffff/search--v1.png" alt="Pesquisar livros" />
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </section>
+    </header>
+
+    <!-- Conteúdo Principal / Card Enorpado de Nova Senha -->
+    <main class="main-nova">
+        <div class="card-nova-senha">
+            <h1>Crie uma Nova Senha</h1>
+            <p class="descricao-nova">Insira sua nova senha abaixo. Ela deve conter pelo menos 6 caracteres.</p>
+
+            <form action="/nova_senha" method="post" class="form-nova">
+                <div class="grupo-input">
+                    <label for="senha">Nova senha:</label>
+                    <input type="password" id="senha" name="senha" minlength="6" placeholder="Mínimo de 6 caracteres"
+                        required>
+                </div>
+
+                <div class="grupo-input">
+                    <label for="confirmar_senha">Confirmar nova senha:</label>
+                    <input type="password" id="confirmar_senha" name="confirmar_senha" minlength="6"
+                        placeholder="Digite a senha novamente" required>
+                </div>
+
+                <button type="submit" class="btn-alterar">Alterar senha</button>
+            </form>
+        </div>
+    </main>
+
+</body>
+
+</html>

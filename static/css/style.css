@@ -1,0 +1,312 @@
+:root {
+    --main-color: black;
+    --color: black;
+    --bg: #2c5364;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.3);
+    font-size: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #1b3a4b, #3b7a9c);
+    font-size: 16px;
+    color: #fff;
+    min-height: 100vh;
+}
+
+/* Alerta Flash */
+.flash-container {
+    position: fixed;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.85);
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.flash-msg {
+    color: #ffcccc;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Cabeçalho Fixo (Mais compacto na altura, mas espaçoso nas pontas) */
+.header {
+    background: rgba(27, 58, 75, 0.98);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.cabecalho {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 25px; /* Altura reduzida para não ficar gigante */
+}
+
+/* Logo Maior e com destaque para não parecer apagado */
+.logo img {
+    width: 65px; /* Tamanho proporcional e destacado */
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.4)); /* Dá brilho se o fundo for escuro */
+    transition: 0.3s;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.navbiblio {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+/* Letras do cabeçalho grandes e confortáveis */
+.nav-links a, .nav-login a {
+    color: #fff;
+    font-size: 18px; 
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.nav-links a:hover, .navbiblio a:hover {
+    color: #0af8ec;
+    text-shadow: 0 0 8px rgba(10, 248, 236, 0.6);
+}
+
+.nav-login {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-greeting {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+}
+
+.btn-sair {
+    background: #ff4d4d;
+    color: #fff !important;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.btn-entrar {
+    background: #fff;
+    color: #1b3a4b !important;
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Lupa ajustada proporcionalmente */
+.lupa img {
+    width: 28px; 
+    height: auto;
+    transition: 0.2s;
+}
+
+.lupa img:hover {
+    transform: scale(1.15);
+}
+
+/* Main / Conteúdo Principal (Ajustado o padding-top para acompanhar a nova altura menor do header) */
+main {
+    padding-top: 105px; 
+    max-width: 1100px;
+    margin: 0 auto 60px auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+/* Introdução de Boas-vindas */
+.introducao-comeco {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.introducao-comeco h3 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.introducao-comeco p {
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #f0f0f0;
+}
+
+/* Grid de Benefícios */
+.beneficios {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.beneficio {
+    display: flex;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    align-items: center;
+    gap: 22px;
+    backdrop-filter: blur(5px);
+    transition: 0.3s;
+}
+
+.beneficio img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.beneficio:hover {
+    transform: translateY(-4px);
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.beneficio-texto h4 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.beneficio-texto p {
+    font-size: 15px;
+    color: #e5e5e5;
+    line-height: 1.6;
+}
+
+/* Card Maior Abaixo dos Cards */
+.introducao-final {
+    display: flex;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    align-items: center;
+    overflow: hidden;
+    margin-top: 50px;
+    margin-bottom: 60px;
+    backdrop-filter: blur(6px);
+}
+
+.imagem-meio {
+    flex: 1; 
+    height: 320px;
+}
+
+.imagem-meio img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.texto-meio {
+    flex: 1; 
+    padding: 45px;
+}
+
+.texto-meio p {
+    font-size: 20px;
+    line-height: 1.9;
+    color: #f9f9f9;
+}
+
+/* Rodapé / Sobre */
+.rodape {
+    margin-top: 40px;
+}
+
+.sobre {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 45px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    text-align: center;
+}
+
+.sobre h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.sobre h2 span {
+    color: #0af8ec;
+}
+
+.sobre p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: #eaeaea;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 850px) {
+    .beneficios {
+        grid-template-columns: 1fr;
+    }
+    
+    .introducao-final {
+        flex-direction: column;
+    }
+
+    .imagem-meio {
+        width: 100%;
+        height: 220px;
+    }
+
+    .navbiblio {
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-links a, .nav-login a {
+        font-size: 15px;
+    }
+}

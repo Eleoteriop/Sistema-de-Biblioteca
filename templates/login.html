@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Logo do topo -->
+    <div id="logo" class="logo">
+        <h1>Bem vindo a Biblioteca</h1>
+        <img src="../static/imagens/logopreview.png" alt="fundo">
+    </div>
+
+    <main class="container">
+        <div class="login-card">
+        <form action="/acesso" method="post">
+            <h1>Login</h1>
+
+            {% set mensagens = get_flashed_messages() %}
+            {% if mensagens %}
+            <div id="alerta" style="font-size: 20px;">
+                {{ mensagens[0] }}
+            </div>
+            {% endif %}
+
+            <!-- Campo Email / Usuário -->
+                <div class="input-box">
+                    <label for="email">E-mail</label>
+                    <div class="input-fora">
+                        <img src="https://img.icons8.com/ios-glyphs/20/user--v1.png" alt="user"/>
+                        <input type="email" name="email" id="email" placeholder="Digite seu email" required>
+                    </div>
+                </div>
+
+            <!-- Campo Senha -->
+                <div class="input-box">
+                    <label for="senha">Senha</label>
+                    <div class="input-fora">
+                        <img src="https://img.icons8.com/material-rounded/20/password.png" alt="password"/>
+                        <input type="password" name="senha" id="senha" placeholder="Digite sua senha" required>
+                    </div>
+                </div>
+
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" name="lembrar_senha" value="sim">
+                    Lembrar-me
+                </label>
+            </div>
+
+            <div class="register-link">
+                <p>Não tem uma conta?</p>
+            </div>
+
+            <div class="btn-principal">
+                <button type="submit" class="btn-login">Entrar</button>
+                <a href="/cadastro" class="btn-cadastro">Cadastre-se</a>
+            </div>
+
+            <div class="remember-forgot" id="remember-forgot">
+                <p><a href="/esqueci_senha">Esqueci a senha</a></p>
+            </div>
+</div>
+
+        </form>
+
+    </main>
+
+
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+/* Estilos específicos para a página de Meus Empréstimos */
+.main-emprestimos {
+    padding-top: 130px;
+    max-width: 900px;
+    margin: 0 auto 60px auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.titulo-pagina {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+.container-emprestimos {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* O card de empréstimo com o mesmo estilo translúcido */
+.emprestimo-card {
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(6px);
+    transition: 0.3s;
+}
+
+.emprestimo-card:hover {
+    transform: translateY(-3px);
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.emprestimo-card h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #0af8ec; /* Destaque em ciano para o título do livro */
+}
+
+.emprestimo-card p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #e5e5e5;
+    margin-bottom: 8px;
+}
+
+.emprestimo-card p span {
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Cores dinâmicas para o status */
+.status-emprestado {
+    color: #ffcc00; /* Amarelo chamativo para livros pendentes de devolução */
+    text-transform: capitalize;
+}
+
+.status-devolvido {
+    color: #4cd137; /* Verde para itens já devolvidos */
+    text-transform: capitalize;
+}
+
+/* Botão de Devolver Livro */
+.form-devolucao {
+    margin-top: 20px;
+}
+
+.btn-devolver {
+    background: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 0 4px 10px rgba(255, 77, 77, 0.3);
+}
+
+.btn-devolver:hover {
+    background: #ff3333;
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(255, 77, 77, 0.5);
+}
+
+/* Mensagem caso não tenha empréstimos */
+.sem-emprestimos {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 40px;
+    border-radius: 12px;
+    font-size: 18px;
+    color: #dcdcdc;
+}

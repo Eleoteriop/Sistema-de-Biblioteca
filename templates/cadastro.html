@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="../static/css/cadastro.css">
+</head>
+
+<body>
+
+    <main class="conteudo-cadastra">
+        <div id="logo" class="logo">
+            <img src="../static/imagens/logopreview.png" alt="logo Biblioteca">
+        </div>
+
+
+        <div class="container">
+            <div class="login-card">
+                <form action="/cadastrando" method="post">
+                    <h1>Cadastro</h1>
+                    {% set mensagens = get_flashed_messages() %}
+                    {% if mensagens %}
+                    <div id="alerta" style="font-size: 20px;">
+                        {{mensagens[0]}}
+                    </div>
+                    {% endif %}
+
+
+                    <!-- Campo Usuário -->
+                    <div class="input-box">
+                        <label for="usuario">Nome de usuário</label>
+                        <div class="input-fora">
+                            <img src="https://img.icons8.com/ios-glyphs/20/user--v1.png" alt="user" />
+                            <input type="text" name="nome_usuario" id="usuario" required>
+                        </div>
+                    </div>
+
+                    <!-- Campo E-mail -->
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <div class="input-fora">
+                            <img src="https://img.icons8.com/material-rounded/20/new-post.png" alt="email" />
+                            <input type="email" name="email" id="email" required>
+                        </div>
+                    </div>
+
+                    <!-- Campo Senha -->
+                    <div class="input-box">
+                        <label for="senha">Senha</label>
+                        <div class="input-fora">
+                            <img src="https://img.icons8.com/material-rounded/20/password.png" alt="senha" />
+                            <input type="password" name="senha" id="senha" minlength="6" required>
+                        </div>
+                    </div>
+
+                    <!-- Campo Confirmar Senha -->
+                    <div class="input-box">
+                        <label for="confirmar_senha">Confirmar senha</label>
+                        <div class="input-fora">
+                            <img src="https://img.icons8.com/material-rounded/20/password.png" alt="confirmar senha" />
+                            <input type="password" name="confirmar_senha" id="confSenha" minlength="6" required>
+                        </div>
+                    </div>
+
+                    <div class="btn-cadastra">
+                        <button type="submit">Cadastrar</button>
+                    </div>
+
+                    <div class="btn-login">
+                        <a href="/login">Login</a>
+                    </div>
+            </div>
+
+
+        </div>
+
+        </form>
+    </main>
+</body>
+
+</html>

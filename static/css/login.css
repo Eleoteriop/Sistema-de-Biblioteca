@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    height: 100vh;
+    overflow: hidden; /* Trava a página para não precisar scrollar */
+    display: flex;
+    justify-content: space-around; 
+    align-items: center; 
+}
+
+body::before {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../imagens/biblioteca.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-position: center;
+    filter: blur(2px);
+    transform: scale(1.05);
+    z-index: -1;
+}
+
+/* Logo e Título */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 450px;
+}
+
+.logo h1 {
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px #000;
+    font-size: 38px;
+    color: #fff;
+}
+
+.logo img {
+    width: 220px; 
+    height: auto;
+    object-fit: contain;
+}
+
+/* Container do Form */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card do Login */
+.login-card {
+    width: 350px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    padding: 25px;
+    color: #fff;
+}
+
+.login-card h1 {
+    text-align: center;
+    text-shadow: 2px 2px 4px #000;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+/* Labels */
+.input-box label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 4px;
+    margin-left: 3px;
+    text-shadow: 1px 1px 3px #000;
+}
+
+/* (ícone + input) */
+.input-fora {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 12px 14px; /* Aumentado para dar respiro e tirar o aspecto grudado */
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Estilização do ícone */
+.input-fora img {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    filter: invert(1); /* Deixa o ícone branco */
+}
+
+/* Estilização do input dentro da caixa */
+.input-fora input {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 15px;
+}
+
+.input-fora input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 14px;
+}
+
+/* Checkbox */
+.checkbox {
+    margin: 5px 0 15px 0;
+    font-size: 14px;
+    text-align: left;
+    text-shadow: 1px 1px 2px #000;
+}
+
+/* Botões principais */
+.btn-principal {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.btn-login, .btn-cadastro {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    padding: 10px;
+    background: #fff;
+    color: black;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.btn-login:hover, .btn-cadastro:hover {
+    cursor: pointer;
+    background: #e0e0e0;
+    transform: scale(1.02);
+}
+
+/* Link esqueci a senha */
+.remember-forgot {
+    text-align: center;
+}
+
+.remember-forgot p a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.remember-forgot p a:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Mensagens Flash organizadas -->
+    {% with mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+    <div class="flash-container">
+        {% for mensagem in mensagens %}
+        <p class="flash-msg">{{ mensagem }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <header class="header">
+        <section class="cabecalho">
+            <a href="#home" class="logo">
+                <img src="../static/imagens/logopreview.png" alt="Logo">
+            </a>
+
+            <nav class="navbiblio">
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    {% if not email %}
+                    <a href="/cadastro">Cadastrar</a>
+                    {% endif %}
+                    <a href="/livros">Livros</a>
+                    <a href="#sobre">Sobre</a>
+                </div>
+
+                <div class="nav-login">
+                    {% if email %}
+                    <div class="bem-vindo-usuario">
+                        <span>Olá, {{ email }}</span>
+                        <a href="{{ url_for('logout') }}" class="btn-sair">Sair</a>
+                    </div>
+                    {% else %}
+                    <a href="/login" class="btn-entrar">Entrar</a>
+                    {% endif %}
+
+                    <div class="lupa">
+                        <a href="/livros">
+                            <img src="https://img.icons8.com/ios/30/ffffff/search--v1.png" alt="Pesquisar livros" />
+                        </a>
+                    </div>
+                </div>
+            </nav>
+
+            {% if email %}
+            Bem vindo, {{ email }}!
+            <a href="{{ url_for('logout') }}" class="btn-sair">Sair</a>
+            {% endif %}
+
+
+        </section>
+    </header>
+
+    <main>
+        <!-- Seção Home / Introdução -->
+        <section class="home" id="home">
+            <div class="introducao-comeco">
+                <h3>Venha conhecer nossa Biblioteca</h3>
+                <p>A leitura transforma vidas, amplia conhecimentos e inspira novas ideias. Aqui você encontra um espaço
+                    acolhedor para aprender, pesquisar e descobrir grandes histórias.</p>
+            </div>
+
+            <!-- Grid de Benefícios (Os 4 cards de cima) -->
+            <div class="beneficios">
+                <div class="beneficio">
+                    <img src="https://img.icons8.com/arcade/64/books.png" alt="livros" />
+                    <div class="beneficio-texto">
+                        <h4>Compre livros</h4>
+                        <p>Ajude a incentivar a leitura em nossa comunidade.</p>
+                    </div>
+                </div>
+
+                <div class="beneficio">
+                    <img src="https://img.icons8.com/color/48/book.png" alt="livro" />
+                    <div class="beneficio-texto">
+                        <h4>Empréstimo de livros</h4>
+                        <p>Aproveite um acervo com títulos para todas as idades.</p>
+                    </div>
+                </div>
+
+                <div class="beneficio">
+                    <img src="https://img.icons8.com/color/48/hearts.png" alt="coracao" />
+                    <div class="beneficio-texto">
+                        <h4>Aceitamos doações</h4>
+                        <p>Sua contribuição ajuda a levar conhecimento a outros.</p>
+                    </div>
+                </div>
+
+                <div class="beneficio">
+                    <img src="https://img.icons8.com/color/48/signing-a-document.png" alt="cadastro" />
+                    <div class="beneficio-texto">
+                        <h4>Faça seu cadastro</h4>
+                        <p>Tenha acesso rápido e gratuito aos nossos serviços.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Seção de Destaque -->
+            <div class="introducao-final">
+                <div class="imagem-meio">
+                    <img src="../static/imagens/biblioteca.jpg" alt="biblioteca">
+                </div>
+                <div class="texto-meio">
+                    <p>Esperamos por você! Venha fazer parte da nossa comunidade de leitores e descubra o
+                        prazer
+                        de ler.</p>
+                </div>
+
+            </div>
+            </div>
+
+            </div>
+
+            <!-- Seção Sobre (Rodapé estruturado) -->
+            <footer class="rodape" id="sobre">
+                <div class="sobre">
+                    <h2>Sobre <span>o projeto Biblioteca</span></h2>
+                    <p>O projeto Biblioteca foi desenvolvido com o objetivo de criar uma plataforma simples para
+                        facilitar o acesso aos livros e o gerenciamento de empréstimos. Através da plataforma, os
+                        usuários podem realizar seu cadastro, acessar sua conta, consultar os livros disponíveis,
+                        solicitar empréstimos e acompanhar suas leituras.</p>
+                    <p>Para a construção do sistema, foram utilizadas tecnologias como Python, Flask, SQLite, HTML e
+                        CSS, além da integração com a API da Open Library para consulta e exibição dinâmica de
+                        informações sobre livros. O desenvolvimento permitiu aplicar conceitos de criação de rotas,
+                        gerenciamento de dados, integração com serviços externos e construção de uma interface web
+                        funcional.</p>
+                </div>
+            </footer>
+
+    </main>
+
+
+</body>
+
+</html>

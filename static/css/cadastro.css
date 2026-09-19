@@ -1,0 +1,145 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-x: hidden;
+}
+
+body::before {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../imagens/biblioteca.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-position: center;
+    filter: blur(2px);
+    transform: scale(1.05);
+    z-index: -1;
+}
+
+/* Logo do Topo */
+
+.logo img {
+    display: block;
+    margin: 15px auto 5px auto;
+    height: 80px;
+    object-fit: contain;
+}
+
+
+/* Container ajustado para n */
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Card de cadastro */
+
+.login-card {
+    width: 320px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.login-card h1 {
+    text-shadow: 2px 2px 4px #000;
+    font-size: 22px;
+    margin: 5px 0 15px 0;
+}
+
+.login-card label {
+    display: block;
+    text-align: left;
+    font-size: 13px;
+    margin-bottom: 3px;
+    margin-left: 5px;
+    text-shadow: 2px 1px 4px #000;
+}
+
+.login-card input {
+    color: #fff;
+    margin: 10px;
+    width: 260px;
+}
+
+/* Agrupa o ícone e o input lado a lado */
+
+.input-fora {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.12);
+    padding: 6px 10px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.input-fora img {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    filter: invert(1);
+}
+
+.input-fora input {
+    color: #fff;
+    font-size: 15px;
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+}
+
+
+/* Botões */
+
+.btn-cadastra button {
+    width: 100%;
+    padding: 10px;
+    background: #fff;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-cadastra button:hover {
+    background: #e0e0e0;
+    font-weight: bold;
+}
+
+.btn-login a {
+    display: inline-block;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    text-shadow: 1px 1px 2px #000;
+    margin-top: 10px;
+}
+
+.btn-login a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}

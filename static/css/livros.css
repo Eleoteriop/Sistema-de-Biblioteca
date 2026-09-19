@@ -1,0 +1,151 @@
+/* Container principal com margem para compensar o header fixo */
+.main-livros {
+    padding-top: 130px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.livros-disponiveis {
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.livros-disponiveis h1 {
+    font-size: 36px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Botão Meus Empréstimos */ 
+.meus-emprestimos {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.meus-emprestimos a {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #0af8ec;
+    text-decoration: none;
+    color: #11222b;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(10, 248, 236, 0.3);
+    transition: all 0.2s ease;
+}
+
+.meus-emprestimos a:hover {
+    background: #00dfd3;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(10, 248, 236, 0.5);
+}
+
+/* Grid de Livros */
+.lista-livros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/* Card Individual de cada Livro */
+.livro {
+    width: 280px;
+    padding: 22px;
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease;
+}
+
+.livro:hover {
+    transform: translateY(-5px);
+}
+
+.livro h2 {
+    color: #1b3a4b;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 15px 0;
+    text-align: center;
+    min-height: 50px; /* Garante alinhamento mesmo se o título for menor */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Capa do Livro */
+.livro img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.sem-capa {
+    width: 100%;
+    height: 230px;
+    background: #e0e0e0;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Informações do Livro */
+.livro-info {
+    margin-bottom: 15px;
+}
+
+.livro p {
+    display: flex;
+    justify-content: space-between;
+    color: #444;
+    font-size: 14px;
+    margin: 6px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 4px;
+}
+
+.livro p span {
+    font-weight: bold;
+    color: #1b3a4b;
+}
+
+/* Formulário e Botão de Empréstimo */
+.form-emprestimo {
+    text-align: center;
+    margin-top: auto;
+}
+
+.livro button {
+    width: 100%;
+    padding: 12px;
+    font-weight: bold;
+    font-size: 15px;
+    background: #1b3a4b;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.2s ease;
+}
+
+.livro button:hover {
+    cursor: pointer;
+    background: #2c5364;
+    transform: scale(1.02);
+}

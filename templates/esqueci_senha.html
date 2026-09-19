@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esqueci minha senha</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/esqueci_senha.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+Para a página de Esqueci minha senha, vamos seguir exatamente o mesmo padrão visual elegante, centralizado e com o
+cabeçalho fixo, aproveitando a mesma estrutura de classes (.main-auth, .auth-card, .form-auth, etc.) que criamos para a
+tela de nova senha.
+
+1. HTML da Página "Esqueci minha senha" (esqueci_senha.html)
+Substitua o conteúdo da sua página por este:
+
+HTML
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esqueci minha senha</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Cabeçalho Padrão -->
+    <header class="header">
+        <section class="cabecalho">
+            <a href="/" class="logo">
+                <img src="../static/imagens/logopreview.png" alt="Logo">
+            </a>
+
+            <nav class="navbiblio">
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/livros">Livros</a>
+                    <a href="/#sobre">Sobre</a>
+                </div>
+
+                <div class="nav-login">
+                    <a href="/login" class="btn-entrar">Entrar</a>
+                    <div class="lupa">
+                        <a href="/livros">
+                            <img src="https://img.icons8.com/ios/30/ffffff/search--v1.png" alt="Pesquisar livros" />
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </section>
+    </header>
+
+    <!-- Mensagens Flash -->
+    {% with mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+    <div class="flash-container-esqueci">
+        {% for mensagem in mensagens %}
+        <p class="flash-msg">{{ mensagem }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
+    <!-- Conteúdo Principal com o Card Enorpado -->
+    <main class="main-esqueci">
+        <div class="card-esqueci-senha">
+            <h1>Recuperar senha</h1>
+            <p class="descricao-esqueci">Digite o e-mail cadastrado para recuperar sua senha e receber as instruções de
+                acesso.</p>
+
+            <form action="/esqueci_senha" method="post" class="form-esqueci">
+                <div class="grupo-input">
+                    <label for="email">E-mail cadastrado:</label>
+                    <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+                </div>
+
+                <button type="submit" class="btn-continuar">Continuar</button>
+            </form>
+        </div>
+    </main>
+
+</body>
+
+</html>
